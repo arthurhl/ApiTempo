@@ -12,7 +12,7 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-COPY ["ApiTempo/ApiTempo.csproj", "ApiTempo/"]
+COPY ["ApiTempo.csproj", "/"]
 RUN dotnet restore "./ApiTempo/ApiTempo.csproj"
 COPY . .
 WORKDIR "/src/ApiTempo"
