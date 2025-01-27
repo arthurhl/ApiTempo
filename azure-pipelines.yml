@@ -35,4 +35,4 @@ steps:
     containerRegistry: 'APITempoahulle'
     repository: 'api-dio-test'
     command: 'buildAndPush'
-    Dockerfile: '**/Dockerfile'
+    Dockerfile: './ApiTempo/Dockerfile'
