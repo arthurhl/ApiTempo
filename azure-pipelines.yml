@@ -10,7 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  solution: ".sln"
+  solution: "*.sln"
   buildPlatform: "Any CPU"
   buildConfiguration: "Release"
 
@@ -27,7 +27,7 @@ steps:
 - script: dotnet build $(solution) --configuration $(buildConfiguration)
   displayName: 'Build Solution'
 
-- script: dotnet build $(solution) --configuration $(buildConfiguration) --no-build --collect:"XPlat Code Coverage"
+- script: dotnet test $(solution) --configuration $(buildConfiguration) --no-build --collect:"XPlat Code Coverage"
   displayName: 'Build Solution'
 
 - task: Docker@2
